@@ -8,10 +8,15 @@ F.A. Bastiaan von Meijenfeldt: CAT_pack development/maintenance
 Bas E. Dutilh: Supervision  
 
 ## CAT_pack
-The contig annotation tool CAT (i) predicts proteins on contigs using prodigal, (ii) runs a diamond search of the predicted proteins against the NR database, (iii) assigns a taxonomic lineage to each predicted protein using the last common ancestor of all diamond hits within 10% of the top bitscore, and (iv) assigns a taxonomic lineage to each contig based on the lineages of all ORFs on the contig.
-[Link to the CAT paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1817-x)
-[Link to the CAT github](https://github.com/MGXlab/CAT_pack)
+The contig annotation tool CAT (i) predicts proteins on contigs using prodigal, (ii) runs a diamond search of the predicted proteins against the NR database, (iii) assigns a taxonomic lineage to each predicted protein using the last common ancestor of all diamond hits within 10% of the top bitscore, and (iv) assigns a taxonomic lineage to each contig based on the lineages of all ORFs on the contig.  
+[Link to the CAT paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1817-x)  
+[Link to the CAT github](https://github.com/MGXlab/CAT_pack)  
 
-We ran CAT_pack version 6.0.1, using diamond
+We ran CAT_pack version 6.0.1, which uses prodigal version 2.6.3 and diamond version 2.1.10.164.  
+We compared to an NR database, downloaded on 12th of December, 2024. The ICTV taxonomy used is consistent with ICTV MSL39.  
 
-CAT_pack contigs -c /home/tina/Documents/ICTV_challenge/dataset_challenge/ICTV_all_contigs.fasta -t CAT_prepare/20241212_CAT_nr/tax/ -d CAT_prepare/20241212_CAT_nr/db/ -n 96 -o ICTV/cat_with_ncbi_uncorrected/20241217_cat_ncbi_uncorrected --path_to_diamond CAT_prepare/20241212_CAT_nr/diamond
+```
+# Running CAT
+CAT_pack contigs -c ICTV_all_contigs.fasta -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o ICTV/cat_output/20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
+python3 
+```
