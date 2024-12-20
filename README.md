@@ -3,9 +3,9 @@
 This is the git repository containing the results of CAT_pack v6.0.1 annotating the contigs of the ICTV taxonomy challenge.
 
 ## Contributors
-Ernestina Hauptfeld: CAT_pack development/maintenance, performed this analysis
-F.A. Bastiaan von Meijenfeldt: CAT_pack development/maintenance
-Bas E. Dutilh: Supervision
+Ernestina Hauptfeld: CAT_pack development/maintenance, performed this analysis  
+F.A. Bastiaan von Meijenfeldt: CAT_pack development/maintenance  
+Bas E. Dutilh: Supervision  
 
 ## CAT_pack
 The contig annotation tool CAT (i) predicts proteins on contigs using prodigal, (ii) runs a diamond search of the predicted proteins against the NR database, (iii) assigns a taxonomic lineage to each predicted protein using the last common ancestor of all diamond hits within 10% of the top bitscore, and (iv) assigns a taxonomic lineage to each contig based on the lineages of all ORFs on the contig.
