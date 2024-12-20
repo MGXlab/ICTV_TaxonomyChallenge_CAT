@@ -18,5 +18,13 @@ We compared to an NR database, downloaded on 12th of December, 2024. The ICTV ta
 ```
 # Running CAT
 CAT_pack contigs -c ICTV_all_contigs.fasta -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o ICTV/cat_output/20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
-python3 
+python3 bin/make_CAToutput_into_ICTVoutput.py
 ```
+
+## Results
+
+*CAT_pack_ICTV_challenge_submission1.csv*: Raw CAT_pack output reformatted into ICTV challenge format.    
+
+*CAT_pack_ICTV_challenge_submission2.csv*: CAT_pack output mapped to ICTV taxonomy via the mapping file *ICTV39_NCBI202412_per_accession.tsv*.  
+
+The mapping file *ICTV39_NCBI202412_per_accession.tsv* was created combining information from the [ICTV Virus Metadata Resource MSL39 v4](https://ictv.global/sites/default/files/VMR/VMR_MSL39.v4_20241106.xlsx) and the taxonomy files of the NR database on the 12th of December. 
