@@ -16,6 +16,12 @@ We ran CAT_pack version 6.0.1, which uses prodigal version 2.6.3 and diamond ver
 We compared to an NR database, downloaded on 12th of December, 2024. The ICTV taxonomy used is consistent with ICTV MSL39.  
 
 ```
+# Set up environment
+conda create -n CAT_pack
+conda activate CAT_pack
+conda install prodigal
+conda install diamond=2.1.10.164
+
 # Running CAT
 CAT_pack contigs -c ICTV_all_contigs.fasta -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o 20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
 python3 bin/make_CAToutput_into_ICTVoutput.py
