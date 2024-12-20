@@ -21,7 +21,7 @@ CAT_pack contigs -c ICTV_all_contigs.fasta -t ./20241212_CAT_nr_website/tax/ -d 
 python3 bin/make_CAToutput_into_ICTVoutput.py
 ```
 
-## Results
+## Result files
 
 *CAT_pack_ICTV_challenge_submission1.csv*: Raw CAT_pack output reformatted into ICTV challenge format.    
 
