@@ -3,9 +3,9 @@
 This is the git repository containing the results of CAT_pack v6.0.1 annotating the contigs of the ICTV taxonomy challenge.
 
 ## Contributors
-Ernestina Hauptfeld: CAT_pack development/maintenance, performed this analysis  
-F.A. Bastiaan von Meijenfeldt: CAT_pack development/maintenance  
-Bas E. Dutilh: Supervision  
+**Ernestina Hauptfeld**: CAT_pack development/maintenance, performed this analysis  
+**F.A. Bastiaan von Meijenfeldt**: CAT_pack development/maintenance  
+**Bas E. Dutilh**: Supervision  
 
 ## CAT_pack
 The contig annotation tool CAT (i) predicts proteins on contigs using prodigal, (ii) runs a diamond search of the predicted proteins against the NR database, (iii) assigns a taxonomic lineage to each predicted protein using the last common ancestor of all diamond hits within 10% of the top bitscore, and (iv) assigns a taxonomic lineage to each contig based on the lineages of all ORFs on the contig.  
@@ -27,4 +27,4 @@ python3 bin/make_CAToutput_into_ICTVoutput.py
 
 *CAT_pack_ICTV_challenge_submission2.csv*: CAT_pack output mapped to ICTV taxonomy via the mapping file *ICTV39_NCBI202412_per_accession.tsv*.  
 
-The mapping file *ICTV39_NCBI202412_per_accession.tsv* was created combining information from the [ICTV Virus Metadata Resource MSL39 v4](https://ictv.global/sites/default/files/VMR/VMR_MSL39.v4_20241106.xlsx) and the taxonomy files of the NR database on the 12th of December. 
+The mapping file *ICTV39_NCBI202412_per_accession.tsv* was created combining information from the [ICTV Virus Metadata Resource MSL39 v4](https://ictv.global/sites/default/files/VMR/VMR_MSL39.v4_20241106.xlsx) and the taxonomy files of the NR database on the 12th of December. In some cases, one NCBI taxid will be assigned to GenBank accessions spanning multiple ICTV species/taxa. If the CAT_pack encountered such taxa during annotation, the last common ancestor in ICTV was chosen as annotation.
