@@ -16,6 +16,8 @@ We ran CAT_pack version 6.0.1, which uses prodigal version 2.6.3 and diamond ver
 We compared to an NR database, downloaded on 12th of December, 2024. The ICTV taxonomy used is consistent with ICTV MSL39.  
 
 ```
+# Clone git repository
+
 # Set up environment
 conda create -n CAT_pack
 conda activate CAT_pack
