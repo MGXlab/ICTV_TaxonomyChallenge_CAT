@@ -31,9 +31,13 @@ cd ICTV_TaxonomyChallenge_CAT
 wget https://tbb.bio.uu.nl/tina/CAT_pack_prepare/20241212_CAT_nr_website.tar.gz
 tar -xzf 20241212_CAT_nr_website.tar.gz
 
-# Running CAT
+# Run CAT
 CAT_pack contigs -c $ICTV_contig_file -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o 20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
 python3 bin/make_CAToutput_into_ICTVoutput.py
+
+# Reformat CAT output
+python3 ./bin/make_CAToutput_into_ICTVoutput.py
+
 ```
 
 ## Result files
