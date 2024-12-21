@@ -12,7 +12,7 @@ The contig annotation tool CAT (i) predicts proteins on contigs using prodigal, 
 [Link to the CAT paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1817-x)  
 [Link to the CAT github](https://github.com/MGXlab/CAT_pack)  
 
-We ran CAT_pack version 6.0.1, which uses prodigal version 2.6.3 and diamond version 2.1.10.164.  
+We ran CAT_pack version 6.0.1, which uses prodigal version 2.6.3 and diamond version 2.1.10  
 We compared to an NR database, downloaded on 12th of December, 2024. The ICTV taxonomy used is consistent with ICTV MSL39.  
 
 ```
@@ -22,10 +22,17 @@ We compared to an NR database, downloaded on 12th of December, 2024. The ICTV ta
 conda create -n CAT_pack
 conda activate CAT_pack
 conda install prodigal
-conda install diamond=2.1.10.164
+conda install diamond=2.1.10
+conda install cat=6.0.1
+
+# Download database (Careful, it's ~360GB unpacked)
+git clone https://github.com/MGXlab/ICTV_TaxonomyChallenge_CAT.git
+cd ICTV_TaxonomyChallenge_CAT
+wget https://tbb.bio.uu.nl/tina/CAT_pack_prepare/20241212_CAT_nr_website.tar.gz
+tar -xzf 20241212_CAT_nr_website.tar.gz
 
 # Running CAT
-CAT_pack contigs -c ICTV_all_contigs.fasta -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o 20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
+CAT_pack contigs -c $ICTV_contig_file -t ./20241212_CAT_nr_website/tax/ -d ./20241212_CAT_nr_website/db/ -n 96 -o 20241217_raw_CAT_results --path_to_diamond ./20241212_CAT_nr_website/diamond
 python3 bin/make_CAToutput_into_ICTVoutput.py
 ```
 
